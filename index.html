@@ -4,6 +4,7 @@
 <head>
 	<title>Promo Warning</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<div class="content">
@@ -11,6 +12,42 @@
 	</div>
 </body>
 <script type="text/javascript">
-	
+	var _promobug = 0;
+	var _adrenaline = 0;
+	//var _hardmob = 0;
+	$(document).ready(function(){
+		promobug();
+		adrenaline();
+		setInterval("promobug()",30000);
+		setInterval("adrenaline()",30000);
+	});
+	function promobug(){
+		$.ajax({
+			type: "POST",
+			url: "script.php",
+			data: { action: 'promobug', id: _promobug },
+			success: function(data) {
+				if(data != ''){
+					data = $.parseJSON(data);
+					_promobug = data.id;
+					$( ".content" ).prepend( "<div>"+data.link+"</div>" );
+				}
+			}
+	    });
+	}
+	function adrenaline(){
+		$.ajax({
+			type: "POST",
+			url: "script.php",
+			data: { action: 'adrenaline', id: _adrenaline },
+			success: function(data) {
+				if(data != ''){
+					data = $.parseJSON(data);
+					_adrenaline = data.id;
+					$( ".content" ).prepend( "<div>"+data.link+"</div>" );
+				}
+			}
+	    });
+	}
 </script>
 </html>
