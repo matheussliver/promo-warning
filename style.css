@@ -45,16 +45,61 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+.h1Title{
+	float: left;
+	clear: left;
+	position: relative;
+	width: 650px;
+	left: 50%;
+	margin-left: -325px;
+	text-align: center;
+	font-size: 36px;
+	font-weight: bold;
+	margin-top: 20px;
+}
 .content{
 	float: left;
 	clear: left;
-	width: 100%;
+	position: relative;
+	width: 650px;
+	max-height: 600px;
+	overflow-y: scroll;
+	border: 1px solid #000;
+	margin-top: 20px;
+	left: 50%;
+	margin-left: -326px;
 }
 .content > div{
 	float: left;
 	clear: left;
-	border: 1px solid #000;
-	width: 900px;
-	height: 20px;
+	width: 100%;
+	height: auto;
+	min-height: 30px;
 	text-align: left;
+	line-height: 1.5;
+	color: #000;
+	text-decoration: none;
+}
+.content > div a{
+	color: #000;
+	text-decoration: none;
+}
+.content > div a:hover{
+	text-decoration: underline;
+}
+.dark{
+	background-color: #eee;
+}
+.divBtn{
+	float: left;
+	clear: left;
+	position: relative;
+	width: 652px;
+	left: 50%;
+	margin-left: -326px;
+}
+.btn{
+	float: right;
+	cursor: pointer;
+	margin-top: 20px;
 }
